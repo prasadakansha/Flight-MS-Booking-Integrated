@@ -1,0 +1,35 @@
+<h1>View Bookings:</h1>
+<div class="container">
+    <form #bookingform="ngForm" (ngSubmit)="view(bookingform)">
+        <div id="footer" style="text-align:right">
+        
+            <input type="submit" style="background-color:royalblue;color:white;width:150px;height:40px;" name="View Bookings" value="View Bookings"> 
+            
+    </div>
+    </form>
+    <div >
+            <table>
+                <tr>
+                    
+                  </tr>
+                <tr *ngFor = "let booking of bookingdetails">
+                    <th>BookingId</th>
+                 <td>{{booking.bookingId}}</td>
+                 <th>UserId</th>
+                 <td>{{booking.userId}}</td>
+                 <th>BookingDate</th>
+                 <td>{{booking.bookingDate}}</td>
+                 <th>PassengerUIN</th>
+                 <td>{{booking.passengerList}}</td>
+                 <th>TicketCost</th>
+                 <td>{{booking.ticketCost}}</td>
+                 <th>FlightNumber</th>
+                 <td>{{booking.flightNumber}}</td>
+                 <th>NoOfPassengers</th>
+                 <td>{{booking.noOfPassengers}}</td>
+                </tr>
+            </table>
+    </div>
+</div>
+
+

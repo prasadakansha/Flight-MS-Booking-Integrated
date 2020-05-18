@@ -1,0 +1,220 @@
+<html>
+<head>
+
+</head>
+<body>
+<div class="container" style="text-align:left" id="image">
+  <header>
+    <h1>&#9992; Flight Reservation System </h1>
+   </header>
+   <h2>Booking Details:</h2>
+   <h4>Passenger Details:</h4>
+  <br>
+  <form [formGroup]="bookingform">
+    <div class="form-group" style="font-family: 'Courier New', Courier, monospace; font-size: medium; font-weight: bold;">
+      Number of Passengers <font color="red">*</font>
+      <select class="form-control" formControlName="numberOfPassengers" (change)="passengersCount()">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+      </select><br>
+      <br>
+      <span class="help-block"
+        *ngIf="bookingform.get('numberOfPassengers').errors && bookingform.get('numberOfPassengers').touched"
+        style="color: red;">
+        <span *ngIf="bookingform.get('numberOfPassengers').errors?.required">
+           Number of passengers is required
+        </span>
+      </span>
+    </div>
+    
+    <div class="form-group" style="font-family: 'Courier New', Courier, monospace; font-size: medium; font-weight: bold;">
+      Passenger 1 Name:<input type="text" class="form-control" formControlName="passengerName1">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerName1').errors && bookingform.get('passengerName1').touched || bookingform.get('passengerName1').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerName1').errors?.required">
+           
+        
+          Passenger Name is required
+        </span>
+        <span *ngIf="bookingform.get('passengerName1').errors?.pattern">
+           
+          Invalid Passenger Name
+        </span>
+      </span>
+      
+      Passenger 1 Age:<input type="text" class="form-control"
+        formControlName="passengerAge1">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerAge1').errors && bookingform.get('passengerAge1').touched || bookingform.get('passengerAge1').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerAge1').errors?.required">
+          
+          Passenger Age is required
+        </span>
+        <span *ngIf="bookingform.get('passengerAge1').errors?.pattern">
+          
+          Invalid Passenger Age
+        </span>
+      </span>
+      
+      Passenger 1 Gender:<input type="text" class="form-control" formControlName="passengerGender1">
+      
+      Passenger 1 Number:<input type="text" class="form-control" formControlName="passengerNumber1">
+      <br>
+      <br>
+      Passenger 2 Name:<input type="text" class="form-control" formControlName="passengerName2">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerName2').errors && bookingform.get('passengerName2').touched || bookingform.get('passengerName2').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerName2').errors?.required">
+          
+          Passenger Name is required
+        </span>
+        <span *ngIf="bookingform.get('passengerName2').errors?.pattern">
+          
+          Invalid Passenger Name
+        </span>
+      </span>
+      
+      Passenger 2 Age:<input type="text" class="form-control"
+        formControlName="passengerAge2">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerAge2').errors && bookingform.get('passengerAge2').touched || bookingform.get('passengerAge2').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerAge2').errors?.required">
+           
+          Passenger Age is required
+        </span>
+        <span *ngIf="bookingform.get('passengerAge2').errors?.pattern">
+          
+          Invalid Passenger Age
+        </span>
+      </span>
+     
+      Passenger 2 Gender:<input type="text" class="form-control" formControlName="passengerGender2">
+      
+      Passenger 2 Number:<input type="text" class="form-control" formControlName="passengerNumber2">
+      <br>
+      <br>
+      Passenger 3 Name:<input type="text" class="form-control" formControlName="passengerName3">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerName3').errors && bookingform.get('passengerName3').touched || bookingform.get('passengerName3').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerName3').errors?.required">
+          
+          Passenger Name is required
+        </span>
+        <span *ngIf="bookingform.get('passengerName3').errors?.pattern">
+          
+          Invalid Passenger Name
+        </span>
+      </span>
+     
+      Passenger 3 Age:<input type="text" class="form-control"
+        formControlName="passengerAge3">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerAge3').errors && bookingform.get('passengerAge3').touched || bookingform.get('passengerAge3').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerAge3').errors?.required">
+          
+          Passenger Age is required
+        </span>
+        <span *ngIf="bookingform.get('passengerAge3').errors?.pattern">
+          
+          Invalid Passenger Age
+        </span>
+      </span>
+     
+      Passenger 3 Gender:<input type="text" class="form-control" formControlName="passengerGender3">
+      
+      Passenger 3 Number:<input type="text" class="form-control" formControlName="passengerNumber3">
+      <br>
+      <br>
+      Passenger 4 Name:<input type="text" class="form-control" formControlName="passengerName4">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerName4').errors && bookingform.get('passengerName4').touched || bookingform.get('passengerName4').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerName4').errors?.required">
+          
+          Passenger Name is required
+        </span>
+        <span *ngIf="bookingform.get('passengerName4').errors?.pattern">
+          
+          Invalid Passenger Name
+        </span>
+      </span>
+      
+      Passenger 4 Age:<input type="text" class="form-control"
+        formControlName="passengerAge4">
+      <span class="help-block"
+        *ngIf="bookingform.get('passengerAge4').errors && bookingform.get('passengerAge4').touched || bookingform.get('passengerAge4').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('passengerAge4').errors?.required">
+          
+          Passenger Age is required
+        </span>
+        <span *ngIf="bookingform.get('passengerAge4').errors?.pattern">
+          
+          Invalid Passenger Age
+        </span>
+      </span>
+      
+      Passenger 4 Gender:<input type="text" class="form-control" formControlName="passengerGender4">
+      
+      Passenger 4 Number:<input type="text" class="form-control" formControlName="passengerNumber4">
+      <br>
+      <br>
+    </div>
+    <div class="form-group" style="font-family: 'Courier New', Courier, monospace; font-size: medium; font-weight: bold;">
+      Billing Address:<font color="red">*</font><input type="text" class="form-control"
+        formControlName="billingAddress">
+    </div>
+    <br>
+      <br>
+    <div class="form-group" style="font-family: 'Courier New', Courier, monospace; font-size: medium; font-weight: bold;">
+      Contact Details:<font color="red">*</font><input type="text" class="form-control"
+        formControlName="phoneNumber">
+      <span class="help-block"
+        *ngIf="bookingform.get('phoneNumber').errors && bookingform.get('phoneNumber').touched || bookingform.get('phoneNumber').dirty"
+        style="color: red;">
+        <span *ngIf="bookingform.get('phoneNumber').errors?.required">
+         
+          Phone Number is required
+        </span>
+        <span *ngIf="bookingform.get('phoneNumber').errors?.pattern">
+           
+          Invalid Phone Number
+        </span>
+      </span>
+    </div>
+    <br>
+    <div id="footer" style="text-align:right">
+    <button type="button" style="background-color:green;color:white;width:150px;height:40px;"class="btn btn-primary" (click)="addBooking()" [disabled]='!bookingform.valid'>
+       
+Booking Confirmed</button>
+</div>
+  </form>
+  </div>
+  <div>
+    <table>
+      <tr *ngFor="let bookingresponse of bookingResponseView">
+        <td>{{bookingResponse.flightNumber}}</td>
+        <td>{{bookingResponse.source}}</td>
+        <td>{{bookingResponse.destination}}</td>
+        <td>{{bookingResponse.arrivalTime}}</td>
+        <td>{{bookingResponse.departureTime}}</td>
+        <td>{{bookingResponse.userId}}</td>
+        <td>{{bookingResponse.billingAddress}}</td>
+        <td>{{bookingresponse.pnrNumber}}</td>
+        <td>{{bookingresponse.passengerName}}</td>
+        <td>{{bookingresponse.passengerAge}}</td>
+        <td>{{bookingresponse.passengerUIN}}</td>
+        <td>{{bookingresponse.luggage}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

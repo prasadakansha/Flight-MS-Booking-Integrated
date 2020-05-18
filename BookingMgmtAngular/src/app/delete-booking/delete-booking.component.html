@@ -1,0 +1,32 @@
+<h1>Cancel Booking:</h1>
+<div class="container">
+    <form #bookingform="ngForm" (ngSubmit)="deleteBookingById(bookingform)">
+        <div class="form-group">
+            <label>Booking Id:</label>
+            <input type="text" #bookingId="ngModel" class="form-control" pattern="^\d+$" name="bookingId" placeholder="Enter the Booking Id" required maxlength="4" ngModel>
+        </div>
+        <div *ngIf="bookingId.invalid && (bookingId.dirty || bookingId.touched)" class="alert alert-danger">
+            <div *ngIf="bookingId.errors.required">
+                Booking Id is required.
+            </div>
+
+            <div *ngIf="bookingId.errors.pattern">
+                Booking Id should be numeric.
+            </div>
+        </div>
+        <div id="footer" style="text-align:right">
+        
+            <input type="submit" style="background-color:red;color:white;width:150px;height:40px;" name="Cancel" value="Cancel"> 
+            
+    </div>
+    <div *ngIf = "bookingCancelFlag">
+  
+  <marquee>
+    <h2>Booking  Cancelled Successfully!</h2>
+    
+  </marquee>
+  <h3>Amount Successfully refunded = {{refundMoney | currency : 'INR'}}</h3>
+    </div>
+    </form>
+</div>
+
